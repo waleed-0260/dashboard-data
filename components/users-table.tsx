@@ -103,6 +103,8 @@ export function UsersTable() {
   const { data: posts, isLoading, isError } = usePosts();
   const { mutate: deletePost, isPending: isDeleting } = useDeletePost();
 
+    if (isLoading) return <p>Loading posts...</p>;
+  if (isError) return <p>Something went wrong.</p>;
 
   return (
     <div className="rounded-md border">
